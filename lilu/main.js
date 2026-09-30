@@ -1,7 +1,8 @@
 // LILU Drinks — меню, SVG-стаканы и конструктор бабл ти.
 // Цены, объёмы и составы — редактируйте в CATEGORIES и BUILDER ниже.
 
-const CURRENCY = '₽';
+const CURRENCY = 'сом.';   // сомони
+const ORDER_URL = 'https://oson24.tj/ru/institution/48';   // страница бара на Oson24
 
 const CATEGORIES = [
   {
@@ -11,12 +12,12 @@ const CATEGORIES = [
     text: 'Сиропы варим сами из свежих фруктов, ягод и трав. Газированная вода, много льда.',
     meta: 'M 500 мл · L 700 мл',
     items: [
-      { name: 'Classic Lemon', desc: 'Лимон, свежая мята, тростниковый сахар', vol: '500 мл', price: 290, c: '#F7E57E', ice: 3, mint: true, slice: '#F7E03C', tag: 'Хит' },
-      { name: 'Berry Basil', desc: 'Клубника, малина, зелёный базилик', vol: '500 мл', price: 320, c: '#E8436B', c2: '#B8174A', ice: 3, slice: '#FF6F8E' },
-      { name: 'Tarragon', desc: 'Домашний тархун, лайм, немного мёда', vol: '500 мл', price: 310, c: '#8CDB5E', ice: 3, mint: true, slice: '#B8E35A' },
-      { name: 'Cucumber Lime', desc: 'Огурец, лайм, мята, тоник', vol: '500 мл', price: 300, c: '#C8EFA0', ice: 4, mint: true, slice: '#9BD84A' },
-      { name: 'Grapefruit Rosemary', desc: 'Розовый грейпфрут, розмарин, апельсин', vol: '500 мл', price: 320, c: '#FF9377', c2: '#F2586B', ice: 3, slice: '#FF7A6B' },
-      { name: 'Sea Buckthorn', desc: 'Облепиха, апельсин, мёд, корица', vol: '500 мл', price: 320, c: '#FFB21F', c2: '#F58A07', ice: 2, slice: '#FFA21F', tag: 'Новинка' },
+      { name: 'Classic Lemon', desc: 'Лимон, свежая мята, тростниковый сахар', vol: '500 мл', price: 35, c: '#F7E57E', ice: 3, mint: true, slice: '#F7E03C', tag: 'Хит' },
+      { name: 'Berry Basil', desc: 'Клубника, малина, зелёный базилик', vol: '500 мл', price: 40, c: '#E8436B', c2: '#B8174A', ice: 3, slice: '#FF6F8E' },
+      { name: 'Tarragon', desc: 'Домашний тархун, лайм, немного мёда', vol: '500 мл', price: 40, c: '#8CDB5E', ice: 3, mint: true, slice: '#B8E35A' },
+      { name: 'Cucumber Lime', desc: 'Огурец, лайм, мята, тоник', vol: '500 мл', price: 35, c: '#C8EFA0', ice: 4, mint: true, slice: '#9BD84A' },
+      { name: 'Grapefruit Rosemary', desc: 'Розовый грейпфрут, розмарин, апельсин', vol: '500 мл', price: 40, c: '#FF9377', c2: '#F2586B', ice: 3, slice: '#FF7A6B' },
+      { name: 'Sea Buckthorn', desc: 'Облепиха, апельсин, мёд, корица', vol: '500 мл', price: 40, c: '#FFB21F', c2: '#F58A07', ice: 2, slice: '#FFA21F', tag: 'Новинка' },
     ],
   },
   {
@@ -26,12 +27,12 @@ const CATEGORIES = [
     text: 'Классика барной карты без алкоголя: мохито, пина колада, май тай и другие.',
     meta: '400 мл',
     items: [
-      { name: 'Virgin Mojito', desc: 'Лайм, мята, тростниковый сахар, содовая', vol: '400 мл', price: 350, c: '#DDF7B8', ice: 4, mint: true, slice: '#9BD84A', tag: 'Хит' },
-      { name: 'Piña Colada', desc: 'Ананас, кокосовые сливки, сок лайма', vol: '400 мл', price: 380, c: '#FFF1C4', c2: '#FFE08A', ice: 2, slice: '#FFD43B' },
-      { name: 'Mai Tai', desc: 'Ананас, апельсин, лайм, миндальный оршад, гренадин', vol: '400 мл', price: 380, c: '#FFC04D', c2: '#E4572E', ice: 3, slice: '#FFA21F' },
-      { name: 'Blue Lagoon', desc: 'Блю кюрасао без алкоголя, лимон, спрайт', vol: '400 мл', price: 360, c: '#46B6FF', c2: '#1778E0', ice: 3, slice: '#F7E03C' },
-      { name: 'Strawberry Daiquiri', desc: 'Клубника, лайм, сахарный сироп, колотый лёд', vol: '400 мл', price: 370, c: '#F55D78', ice: 2, slice: '#9BD84A' },
-      { name: 'Passion Spritz', desc: 'Маракуйя, ваниль, апельсин, игристая вода', vol: '400 мл', price: 380, c: '#FFD15C', c2: '#FF9F1C', ice: 3, slice: '#FFD43B', tag: 'Новинка' },
+      { name: 'Virgin Mojito', desc: 'Лайм, мята, тростниковый сахар, содовая', vol: '400 мл', price: 45, c: '#DDF7B8', ice: 4, mint: true, slice: '#9BD84A', tag: 'Хит' },
+      { name: 'Piña Colada', desc: 'Ананас, кокосовые сливки, сок лайма', vol: '400 мл', price: 50, c: '#FFF1C4', c2: '#FFE08A', ice: 2, slice: '#FFD43B' },
+      { name: 'Mai Tai', desc: 'Ананас, апельсин, лайм, миндальный оршад, гренадин', vol: '400 мл', price: 50, c: '#FFC04D', c2: '#E4572E', ice: 3, slice: '#FFA21F' },
+      { name: 'Blue Lagoon', desc: 'Блю кюрасао без алкоголя, лимон, спрайт', vol: '400 мл', price: 45, c: '#46B6FF', c2: '#1778E0', ice: 3, slice: '#F7E03C' },
+      { name: 'Strawberry Daiquiri', desc: 'Клубника, лайм, сахарный сироп, колотый лёд', vol: '400 мл', price: 45, c: '#F55D78', ice: 2, slice: '#9BD84A' },
+      { name: 'Passion Spritz', desc: 'Маракуйя, ваниль, апельсин, игристая вода', vol: '400 мл', price: 50, c: '#FFD15C', c2: '#FF9F1C', ice: 3, slice: '#FFD43B', tag: 'Новинка' },
     ],
   },
   {
@@ -41,12 +42,12 @@ const CATEGORIES = [
     text: 'Бабл ти по мотивам любимых десертов: с мороженым, соусами, крошкой и тапиокой.',
     meta: '500 мл',
     items: [
-      { name: 'Twix', desc: 'Молочный чай, карамель, песочное печенье, пломбир', vol: '500 мл', price: 450, c: '#D9A56E', c2: '#8A5427', top: 'tapioca', cream: true, drizzle: '#B8742F', crumbs: '#E7C08A' },
-      { name: 'Snickers', desc: 'Шоколад, арахисовая паста, карамель, пломбир', vol: '500 мл', price: 450, c: '#B98356', c2: '#5E3A21', top: 'tapioca', cream: true, drizzle: '#6B3E1F', crumbs: '#C9955A', tag: 'Хит' },
-      { name: 'Dubai Chocolate', desc: 'Фисташковый крем, хрустящий катаифи, тёмный шоколад', vol: '500 мл', price: 520, c: '#6B3E26', c2: '#8DB255', top: 'tapioca', cream: true, drizzle: '#8DB255', crumbs: '#C8B26A', tag: 'Хит' },
-      { name: 'Oreo', desc: 'Молочный коктейль, крошка печенья, ванильное мороженое', vol: '500 мл', price: 450, c: '#E3DED8', c2: '#6D6660', top: 'tapioca', cream: true, drizzle: '#2A2522', crumbs: '#2A2522' },
-      { name: 'Raffaello', desc: 'Кокосовое молоко, миндаль, белый шоколад, пломбир', vol: '500 мл', price: 470, c: '#F6F1E7', c2: '#E8DCC6', top: 'jelly', cream: true, drizzle: '#E8DCC6', crumbs: '#FFFFFF' },
-      { name: 'Bounty', desc: 'Молочный шоколад, кокосовая стружка, пломбир', vol: '500 мл', price: 450, c: '#EFE4D4', c2: '#5A3421', top: 'tapioca', cream: true, drizzle: '#4B2B1B', crumbs: '#FFFFFF', tag: 'Новинка' },
+      { name: 'Twix', desc: 'Молочный чай, карамель, песочное печенье, пломбир', vol: '500 мл', price: 55, c: '#D9A56E', c2: '#8A5427', top: 'tapioca', cream: true, drizzle: '#B8742F', crumbs: '#E7C08A' },
+      { name: 'Snickers', desc: 'Шоколад, арахисовая паста, карамель, пломбир', vol: '500 мл', price: 55, c: '#B98356', c2: '#5E3A21', top: 'tapioca', cream: true, drizzle: '#6B3E1F', crumbs: '#C9955A', tag: 'Хит' },
+      { name: 'Dubai Chocolate', desc: 'Фисташковый крем, хрустящий катаифи, тёмный шоколад', vol: '500 мл', price: 65, c: '#6B3E26', c2: '#8DB255', top: 'tapioca', cream: true, drizzle: '#8DB255', crumbs: '#C8B26A', tag: 'Хит' },
+      { name: 'Oreo', desc: 'Молочный коктейль, крошка печенья, ванильное мороженое', vol: '500 мл', price: 55, c: '#E3DED8', c2: '#6D6660', top: 'tapioca', cream: true, drizzle: '#2A2522', crumbs: '#2A2522' },
+      { name: 'Raffaello', desc: 'Кокосовое молоко, миндаль, белый шоколад, пломбир', vol: '500 мл', price: 60, c: '#F6F1E7', c2: '#E8DCC6', top: 'jelly', cream: true, drizzle: '#E8DCC6', crumbs: '#FFFFFF' },
+      { name: 'Bounty', desc: 'Молочный шоколад, кокосовая стружка, пломбир', vol: '500 мл', price: 55, c: '#EFE4D4', c2: '#5A3421', top: 'tapioca', cream: true, drizzle: '#4B2B1B', crumbs: '#FFFFFF', tag: 'Новинка' },
     ],
   },
   {
@@ -56,12 +57,12 @@ const CATEGORIES = [
     text: 'Густые напитки на пюре из спелых фруктов, со льдом и поппинг-боба.',
     meta: 'M 500 мл · L 700 мл',
     items: [
-      { name: 'Mango Passion', desc: 'Пюре манго, маракуйя, поппинг-боба манго', vol: '500 мл', price: 360, c: '#FFBE2E', c2: '#FF9F1C', top: 'popping', pop: '#FFD43B', ice: 2, tag: 'Хит' },
-      { name: 'Strawberry Banana', desc: 'Клубничное пюре, банан, йогурт', vol: '500 мл', price: 360, c: '#FF7A8A', c2: '#FFE08A', top: 'popping', pop: '#FF4F6D', ice: 2 },
-      { name: 'Watermelon Mint', desc: 'Арбуз, мята, лайм', vol: '500 мл', price: 340, c: '#FF5E6C', ice: 3, mint: true, top: 'popping', pop: '#9BD84A' },
-      { name: 'Peach Jasmine', desc: 'Пюре персика, жасминовый чай, кокосовое желе', vol: '500 мл', price: 360, c: '#FFBE93', c2: '#FF9E6B', top: 'jelly', ice: 2 },
-      { name: 'Kiwi Apple', desc: 'Киви, зелёное яблоко, лайм', vol: '500 мл', price: 350, c: '#A6D95B', c2: '#7CB83A', top: 'popping', pop: '#D2FF42', ice: 2 },
-      { name: 'Pineapple Coconut', desc: 'Ананасовое пюре, кокосовое молоко, желе', vol: '500 мл', price: 370, c: '#FFE066', c2: '#FFF6D6', top: 'jelly', ice: 2, tag: 'Новинка' },
+      { name: 'Mango Passion', desc: 'Пюре манго, маракуйя, поппинг-боба манго', vol: '500 мл', price: 45, c: '#FFBE2E', c2: '#FF9F1C', top: 'popping', pop: '#FFD43B', ice: 2, tag: 'Хит' },
+      { name: 'Strawberry Banana', desc: 'Клубничное пюре, банан, йогурт', vol: '500 мл', price: 45, c: '#FF7A8A', c2: '#FFE08A', top: 'popping', pop: '#FF4F6D', ice: 2 },
+      { name: 'Watermelon Mint', desc: 'Арбуз, мята, лайм', vol: '500 мл', price: 40, c: '#FF5E6C', ice: 3, mint: true, top: 'popping', pop: '#9BD84A' },
+      { name: 'Peach Jasmine', desc: 'Пюре персика, жасминовый чай, кокосовое желе', vol: '500 мл', price: 45, c: '#FFBE93', c2: '#FF9E6B', top: 'jelly', ice: 2 },
+      { name: 'Kiwi Apple', desc: 'Киви, зелёное яблоко, лайм', vol: '500 мл', price: 45, c: '#A6D95B', c2: '#7CB83A', top: 'popping', pop: '#D2FF42', ice: 2 },
+      { name: 'Pineapple Coconut', desc: 'Ананасовое пюре, кокосовое молоко, желе', vol: '500 мл', price: 45, c: '#FFE066', c2: '#FFF6D6', top: 'jelly', ice: 2, tag: 'Новинка' },
     ],
   },
   {
@@ -71,12 +72,12 @@ const CATEGORIES = [
     text: 'Молочные и фруктовые чаи на свежезаваренной основе, с тапиокой или поппинг-боба.',
     meta: 'M 500 мл · L 700 мл',
     items: [
-      { name: 'Classic Milk Tea', desc: 'Чёрный чай, молоко, тапиока', vol: '500 мл', price: 320, c: '#CFA982', top: 'tapioca', ice: 2, tag: 'Хит' },
-      { name: 'Brown Sugar', desc: 'Молоко, тапиока в сиропе из тёмного тростникового сахара', vol: '500 мл', price: 350, c: '#EFE2D2', c2: '#9A5A2A', top: 'tapioca', stripes: '#8B4B1F', ice: 1 },
-      { name: 'Taro', desc: 'Таро, молоко, тапиока', vol: '500 мл', price: 340, c: '#BFA3E0', top: 'tapioca', ice: 2 },
-      { name: 'Matcha Latte', desc: 'Японская матча, молоко, тапиока', vol: '500 мл', price: 360, c: '#A9CC72', c2: '#EEF0E0', top: 'tapioca', ice: 2 },
-      { name: 'Thai Tea', desc: 'Тайский чай, сгущённое молоко, тапиока', vol: '500 мл', price: 340, c: '#F5A04F', top: 'tapioca', ice: 2 },
-      { name: 'Lychee Oolong', desc: 'Улун, личи, поппинг-боба личи', vol: '500 мл', price: 340, c: '#F7E2CF', c2: '#F2C6A8', top: 'popping', pop: '#FFF4E8', ice: 3 },
+      { name: 'Classic Milk Tea', desc: 'Чёрный чай, молоко, тапиока', vol: '500 мл', price: 40, c: '#CFA982', top: 'tapioca', ice: 2, tag: 'Хит' },
+      { name: 'Brown Sugar', desc: 'Молоко, тапиока в сиропе из тёмного тростникового сахара', vol: '500 мл', price: 45, c: '#EFE2D2', c2: '#9A5A2A', top: 'tapioca', stripes: '#8B4B1F', ice: 1 },
+      { name: 'Taro', desc: 'Таро, молоко, тапиока', vol: '500 мл', price: 40, c: '#BFA3E0', top: 'tapioca', ice: 2 },
+      { name: 'Matcha Latte', desc: 'Японская матча, молоко, тапиока', vol: '500 мл', price: 45, c: '#A9CC72', c2: '#EEF0E0', top: 'tapioca', ice: 2 },
+      { name: 'Thai Tea', desc: 'Тайский чай, сгущённое молоко, тапиока', vol: '500 мл', price: 40, c: '#F5A04F', top: 'tapioca', ice: 2 },
+      { name: 'Lychee Oolong', desc: 'Улун, личи, поппинг-боба личи', vol: '500 мл', price: 40, c: '#F7E2CF', c2: '#F2C6A8', top: 'popping', pop: '#FFF4E8', ice: 3 },
     ],
   },
 ];
@@ -96,9 +97,9 @@ const BUILDER = {
     legend: 'Топпинг',
     options: [
       { id: 'tapioca', label: 'Тапиока', add: 0, top: 'tapioca' },
-      { id: 'mango', label: 'Боба манго', add: 50, top: 'popping', pop: '#FFD43B' },
-      { id: 'strawberry', label: 'Боба клубника', add: 50, top: 'popping', pop: '#FF4F6D' },
-      { id: 'jelly', label: 'Кокосовое желе', add: 40, top: 'jelly' },
+      { id: 'mango', label: 'Боба манго', add: 5, top: 'popping', pop: '#FFD43B' },
+      { id: 'strawberry', label: 'Боба клубника', add: 5, top: 'popping', pop: '#FF4F6D' },
+      { id: 'jelly', label: 'Кокосовое желе', add: 5, top: 'jelly' },
       { id: 'none', label: 'Без топпинга', add: 0, top: 'none' },
     ],
   },
@@ -117,8 +118,8 @@ const BUILDER = {
   size: {
     legend: 'Размер',
     options: [
-      { id: 'm', label: 'M', hint: '500 мл', price: 320 },
-      { id: 'l', label: 'L', hint: '700 мл', price: 390 },
+      { id: 'm', label: 'M', hint: '500 мл', price: 40 },
+      { id: 'l', label: 'L', hint: '700 мл', price: 50 },
     ],
   },
 };
@@ -348,7 +349,7 @@ function initCopy() {
   $('#copyOrder').addEventListener('click', () => {
     const st = builderState();
     const text = `LILU Bubble Tea: ${orderText(st)} — ${$('#summaryPrice').textContent}`;
-    const done = () => { $('#copyStatus').textContent = 'Заказ скопирован. Отправьте его нам или покажите бариста.'; };
+    const done = () => { $('#copyStatus').textContent = 'Заказ скопирован. Вставьте его в комментарий к заказу на Oson24 или покажите бариста.'; };
     const fallback = () => {
       const r = document.createRange();
       r.selectNodeContents($('#summaryText'));
