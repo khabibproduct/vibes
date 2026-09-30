@@ -20,7 +20,6 @@
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#menu">Меню</a>
-      <a href="#builder">Собрать бабл ти</a>
       <a href="#about">О баре</a>
       <a href="franchise.html">Франшиза</a>
       <a href="#visit">Контакты</a>
@@ -31,8 +30,8 @@
 
 <nav class="tabbar glass" aria-label="Быстрая навигация">
   <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1.4 13H7.4z"/><path d="M5 7h14M14 7l2-5"/></svg>Меню</a>
-  <a href="#builder"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="16" r="2.5"/><circle cx="15" cy="17" r="2.5"/><circle cx="12" cy="10" r="2.5"/><path d="M17 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>Собрать</a>
   <a href="franchise.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10l8-6 8 6v10H4z"/><path d="M10 20v-5h4v5"/></svg>Франшиза</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Контакты</a>
   <a href="https://oson24.tj/ru/institution/48" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>Заказать</a>
 </nav>
 
@@ -66,7 +65,7 @@
       <div>
         <p class="eyebrow eyebrow-dark">Заказ онлайн</p>
         <h2>Закажите на Oson24</h2>
-        <p>Мы есть на Oson24. Выберите напитки на странице нашего бара и оформите заказ там.</p>
+        <p id="orderInfo">Мы есть на Oson24. Выберите напитки на странице нашего бара и оформите заказ там.</p>
       </div>
       <a class="btn btn-blue" href="https://oson24.tj/ru/institution/48" target="_blank" rel="noopener">Открыть меню на Oson24 ↗</a>
     </div>
@@ -76,7 +75,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Меню</h2>
-        <p>Пять линеек напитков: от домашних лимонадов до десертных бабл ти с мороженым. Все напитки без алкоголя.</p>
+        <p id="menuLead">Названия и цены те же, что на Oson24.</p>
       </div>
       <div class="chips-wrap">
         <nav class="chips-glass glass" aria-label="Линейки напитков"><div class="chips" id="chips"></div></nav>
@@ -85,44 +84,18 @@
     </div>
   </section>
 
-  <section class="container section-pad" id="builder">
-    <div class="builder glass glass-lime">
-      <div class="builder-visual">
-        <div class="builder-cup" id="builderCup"></div>
-      </div>
-      <div class="builder-panel">
-        <p class="eyebrow eyebrow-dark">Конструктор</p>
-        <h2>Собери свой <span class="en">Bubble Tea</span></h2>
-        <p class="builder-intro">Выберите основу, топпинг, сладость и лёд. Скопируйте готовый заказ и вставьте его в комментарий на Oson24.</p>
-        <form id="builderForm" class="builder-form"></form>
-        <div class="builder-summary glass glass-dark">
-          <div>
-            <p class="summary-label">Ваш напиток</p>
-            <p class="summary-text" id="summaryText"></p>
-          </div>
-          <div class="summary-side">
-            <p class="summary-price" id="summaryPrice"></p>
-            <button class="btn btn-lime" type="button" id="copyOrder">Скопировать заказ</button>
-            <a class="btn btn-glass" href="https://oson24.tj/ru/institution/48" target="_blank" rel="noopener">Заказать на Oson24 ↗</a>
-          </div>
-        </div>
-        <p class="copy-status" id="copyStatus" role="status"></p>
-      </div>
-    </div>
-  </section>
-
   <section class="container section-pad" id="about">
     <div class="about-grid">
       <div class="about-copy glass">
         <h2>Бар, где не наливают</h2>
-        <p>LILU — место, куда приходят с друзьями, после учёбы или на свидание. Вместо алкогольной карты у нас лимонады на домашних сиропах, безалкогольная классика вроде мохито и пина колады, бабл ти на свежезаваренном чае и десертные напитки с мороженым.</p>
-        <p>Каждую линейку мы собрали вокруг одной идеи: напиток должен быть вкусным без сахарной перегрузки и красивым в стакане.</p>
+        <p>LILU Drinks — безалкогольный бар в Душанбе. В меню коктейли (мохито, пина колада, май тай), лимонады, чаи, бабл ти и бабл ти с мороженым, смузи, фрикшейки, кофе и горячие напитки.</p>
+        <p>Приходите с друзьями, после учёбы или на свидание. Заказывайте у нас или на Oson24, если не хочется выходить из дома.</p>
       </div>
       <dl class="facts">
         <div class="fact glass"><dt>0,0 %</dt><dd>алкоголя во всех напитках</dd></div>
-        <div class="fact glass"><dt>30</dt><dd>вкусов в пяти линейках</dd></div>
-        <div class="fact glass"><dt>0–100 %</dt><dd>сладость настраивается с шагом 25 %</dd></div>
-        <div class="fact glass"><dt>700 мл</dt><dd>самый большой стакан, размер L</dd></div>
+        <div class="fact glass"><dt id="factCount">48</dt><dd id="factCountLabel">позиций в меню</dd></div>
+        <div class="fact glass"><dt>25 сом.</dt><dd>цена самого доступного напитка</dd></div>
+        <div class="fact glass"><dt>0,7 л</dt><dd>самый большой стакан</dd></div>
       </dl>
     </div>
   </section>
@@ -142,10 +115,10 @@
     <div class="visit glass glass-blue">
       <h2>Приходите в <span class="en">LILU</span></h2>
       <div class="visit-grid">
-        <div class="visit-item"><p class="visit-label">Адрес</p><p class="visit-value">г. Душанбе,<br>ул. Лимонадная, 7</p></div>
-        <div class="visit-item"><p class="visit-label">Часы работы</p><p class="visit-value">Ежедневно<br>10:00–23:00</p></div>
-        <div class="visit-item"><p class="visit-label">Заказ онлайн</p><p class="visit-value"><a class="visit-link" href="https://oson24.tj/ru/institution/48" target="_blank" rel="noopener">Oson24 ↗</a></p></div>
-        <div class="visit-item"><p class="visit-label">Соцсети</p><p class="visit-value">@lilu.drinks</p></div>
+        <div class="visit-item"><p class="visit-label">Город</p><p class="visit-value">Душанбе<br><a class="visit-link" id="visitMap" href="https://www.google.com/maps?q=38.573614,68.8016" target="_blank" rel="noopener">На карте ↗</a></p></div>
+        <div class="visit-item"><p class="visit-label">Часы работы</p><p class="visit-value" id="visitHours">Ежедневно<br>11:00–22:45</p></div>
+        <div class="visit-item"><p class="visit-label">Телефон</p><p class="visit-value"><a class="visit-link" id="visitPhone" href="tel:+992751223003">+992 75 122 30 03</a></p></div>
+        <div class="visit-item"><p class="visit-label">Instagram</p><p class="visit-value"><a class="visit-link" href="https://www.instagram.com/lilu.dushanbe/" target="_blank" rel="noopener">@lilu.dushanbe ↗</a></p></div>
       </div>
     </div>
   </section>
@@ -164,6 +137,7 @@
 </footer>
 
 <script src="glass.js"></script>
+<script src="menu-data.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

@@ -20,17 +20,17 @@ const FORMATS = [
   {
     id: 'togo', name: 'LILU To Go', ru: 'Киоск навынос', area: '6–10 м²',
     text: 'Точка в потоке людей: у метро, в бизнес-центре, на фудкорте. Только навынос.',
-    invest: 200000, payroll: 9000, rent: 5000, cups: 80, check: 35, staff: '2–3 человека', menu: '20 напитков',
+    invest: 200000, payroll: 9000, rent: 5000, cups: 80, check: 35, staff: '2–3 человека', menu: 'сокращённое меню',
   },
   {
     id: 'island', name: 'LILU Island', ru: 'Остров в торговом центре', area: '12–20 м²', featured: true,
     text: 'Самый популярный формат: стойка в ТЦ с полным меню и витриной напитков.',
-    invest: 350000, payroll: 14000, rent: 10000, cups: 120, check: 38, staff: '4 человека', menu: '30 напитков',
+    invest: 350000, payroll: 14000, rent: 10000, cups: 120, check: 38, staff: '4 человека', menu: 'полное меню',
   },
   {
     id: 'lounge', name: 'LILU Lounge', ru: 'Бар с посадкой', area: '40–70 м²',
     text: 'Полноценный безалкогольный бар с посадкой, коктейльной линейкой и десертами.',
-    invest: 700000, payroll: 28000, rent: 20000, cups: 200, check: 45, staff: '6–8 человек', menu: '30 напитков и десерты',
+    invest: 700000, payroll: 28000, rent: 20000, cups: 200, check: 45, staff: '6–8 человек', menu: 'полное меню и десерты',
   },
 ];
 
