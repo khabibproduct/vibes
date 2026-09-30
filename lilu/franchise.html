@@ -106,11 +106,11 @@
         </div>
         <div class="field">
           <div class="field-top"><label for="calcCheck">Средний чек</label><output id="calcCheckOut" for="calcCheck"></output></div>
-          <input type="range" id="calcCheck" min="250" max="700" step="10">
+          <input type="range" id="calcCheck" min="20" max="80" step="1">
         </div>
         <div class="field">
           <div class="field-top"><label for="calcRent">Аренда в месяц</label><output id="calcRentOut" for="calcRent"></output></div>
-          <input type="range" id="calcRent" min="30000" max="900000" step="10000">
+          <input type="range" id="calcRent" min="2000" max="60000" step="500">
         </div>
         <p class="calc-note" id="calcNote"></p>
       </form>
@@ -181,8 +181,8 @@
       </div>
       <form class="apply-form" id="applyForm" novalidate>
         <div class="field"><label for="aName">Имя</label><input id="aName" name="name" autocomplete="name" required placeholder="Как к вам обращаться"></div>
-        <div class="field"><label for="aPhone">Телефон</label><input id="aPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 900 000-00-00"></div>
-        <div class="field"><label for="aCity">Город</label><input id="aCity" name="city" autocomplete="address-level2" required placeholder="Где хотите открыться"></div>
+        <div class="field"><label for="aPhone">Телефон</label><input id="aPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+992 900 00-00-00"></div>
+        <div class="field"><label for="aCity">Город</label><input id="aCity" name="city" autocomplete="address-level2" required placeholder="Например, Душанбе, Худжанд"></div>
         <div class="field"><label for="aFormat">Формат</label>
           <select id="aFormat" name="format">
             <option>Пока не знаю</option>
@@ -190,10 +190,10 @@
         </div>
         <div class="field field-wide"><label for="aBudget">Бюджет на запуск</label>
           <select id="aBudget" name="budget">
-            <option>До 2 млн ₽</option>
-            <option>2–4 млн ₽</option>
-            <option>4–6 млн ₽</option>
-            <option>Больше 6 млн ₽</option>
+            <option>До 200 тыс. сом.</option>
+            <option>200–400 тыс. сом.</option>
+            <option>400–700 тыс. сом.</option>
+            <option>Больше 700 тыс. сом.</option>
           </select>
         </div>
         <div class="field field-wide"><label for="aMsg">Комментарий</label><textarea id="aMsg" name="message" placeholder="Есть ли помещение, опыт в бизнесе, вопросы"></textarea></div>

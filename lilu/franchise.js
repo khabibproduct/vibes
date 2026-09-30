@@ -1,14 +1,14 @@
 // LILU Drinks — страница франшизы: форматы, калькулятор окупаемости, заявка.
-// Все цифры — ориентировочные; поменяйте их в FRANCHISE и FORMATS.
+// Все цифры — ориентировочные, в сомони (TJS); поменяйте их в FRANCHISE и FORMATS.
 
-const CURRENCY = '₽';
+const CURRENCY = 'сом.';   // сомони
 
 // Куда отправлять заявки (например, Formspree, свой API или вебхук CRM). Пока пусто — заявка копируется в буфер.
 const FORM_ENDPOINT = '';
 const FALLBACK_CONTACT = 'Telegram @lilu_franchise';
 
 const FRANCHISE = {
-  lumpSum: 500000,   // паушальный взнос, входит в инвестиции
+  lumpSum: 60000,    // паушальный взнос, входит в инвестиции
   royalty: 0.05,     // роялти от выручки
   marketing: 0.01,   // маркетинговый сбор от выручки
   cogs: 0.30,        // себестоимость напитков от выручки
@@ -20,24 +20,27 @@ const FORMATS = [
   {
     id: 'togo', name: 'LILU To Go', ru: 'Киоск навынос', area: '6–10 м²',
     text: 'Точка в потоке людей: у метро, в бизнес-центре, на фудкорте. Только навынос.',
-    invest: 1600000, payroll: 240000, rent: 120000, cups: 100, check: 340, staff: '2–3 человека', menu: '20 напитков',
+    invest: 200000, payroll: 9000, rent: 5000, cups: 80, check: 35, staff: '2–3 человека', menu: '20 напитков',
   },
   {
     id: 'island', name: 'LILU Island', ru: 'Остров в торговом центре', area: '12–20 м²', featured: true,
     text: 'Самый популярный формат: стойка в ТЦ с полным меню и витриной напитков.',
-    invest: 2800000, payroll: 360000, rent: 250000, cups: 150, check: 360, staff: '4 человека', menu: '30 напитков',
+    invest: 350000, payroll: 14000, rent: 10000, cups: 120, check: 38, staff: '4 человека', menu: '30 напитков',
   },
   {
     id: 'lounge', name: 'LILU Lounge', ru: 'Бар с посадкой', area: '40–70 м²',
     text: 'Полноценный безалкогольный бар с посадкой, коктейльной линейкой и десертами.',
-    invest: 5500000, payroll: 780000, rent: 550000, cups: 250, check: 420, staff: '6–8 человек', menu: '30 напитков и десерты',
+    invest: 700000, payroll: 28000, rent: 20000, cups: 200, check: 45, staff: '6–8 человек', menu: '30 напитков и десерты',
   },
 ];
 
 const $ = sel => document.querySelector(sel);
 const money = n => `${Math.round(n).toLocaleString('ru-RU')} ${CURRENCY}`;
-const mln = n => `${(n / 1e6).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} млн ${CURRENCY}`;
-const thousands = n => `${Math.round(n / 1000).toLocaleString('ru-RU')} тыс. ${CURRENCY}`;
+const thousands = n => `${(n / 1000).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} тыс. ${CURRENCY}`;
+// суммы от миллиона пишем в млн, остальные в тысячах
+const mln = n => n >= 1e6
+  ? `${(n / 1e6).toLocaleString('ru-RU', { maximumFractionDigits: 1 })} млн ${CURRENCY}`
+  : thousands(n);
 const pct = x => `${Math.round(x * 100)} %`;
 
 function economics({ invest, payroll, rent, cups, check }) {
