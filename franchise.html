@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Франшиза LILU Drinks</title>
+<meta name="description" content="Франшиза безалкогольного бара LILU Drinks: три формата, калькулятор окупаемости и заявка на открытие.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979..2050&family=Martian+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wallpaper" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="topbar">
+  <div class="topbar-pill glass">
+    <a class="logo" href="index.html" aria-label="LILU Drinks — на главную">
+      <span class="logo-mark">LILU</span><span class="logo-sub">drinks</span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="index.html#menu">Меню</a>
+      <a href="franchise.html" aria-current="page">Франшиза</a>
+      <a href="#formats">Форматы</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#steps">Как открыть</a>
+    </nav>
+    <a class="btn btn-lime btn-sm" href="#apply">Оставить заявку</a>
+  </div>
+</header>
+
+<nav class="tabbar glass" aria-label="Быстрая навигация">
+  <a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1.4 13H7.4z"/><path d="M5 7h14M14 7l2-5"/></svg>Бар</a>
+  <a href="#formats"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>Форматы</a>
+  <a href="#calc"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M8 7h8M8 12h2M12 12h2M8 16h2M12 16h4"/></svg>Доход</a>
+  <a href="#apply"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16z"/><path d="M14 7l3 3"/></svg>Заявка</a>
+</nav>
+
+<main id="top">
+  <section class="container hero-wrap">
+    <div class="f-hero glass glass-blue">
+      <div class="f-hero-copy">
+        <p class="eyebrow">Франшиза</p>
+        <h1>Откройте <span class="en">LILU</span> в своём городе</h1>
+        <p class="lead">Безалкогольный бар с бабл ти и крафтовыми лимонадами. Простая технология, понятная экономика и поддержка на каждом этапе запуска.</p>
+        <div class="hero-actions">
+          <a class="btn btn-lime" href="#calc">Рассчитать доход</a>
+          <a class="btn btn-glass" href="#apply">Оставить заявку</a>
+        </div>
+      </div>
+      <dl class="f-kpis" id="heroKpis"></dl>
+    </div>
+  </section>
+
+  <section class="container f-section" id="why">
+    <div class="f-head">
+      <h2>Почему это работает</h2>
+      <p>Напитки — самый маржинальный продукт в общепите, а безалкогольный формат открыт для всех: школьников, семей, офисов и тех, кто не пьёт.</p>
+    </div>
+    <div class="why">
+      <article class="why-item glass">
+        <span class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
+        <h3>Растущий спрос</h3>
+        <p>Всё больше людей выбирают вечер без алкоголя. Им нужно место, где можно посидеть и взять что-то интересное.</p>
+      </article>
+      <article class="why-item glass">
+        <span class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></span>
+        <h3>Высокая маржа</h3>
+        <p id="whyMargin">Себестоимость напитка — около 30 % от цены в меню.</p>
+      </article>
+      <article class="why-item glass">
+        <span class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></span>
+        <h3>Простая технология</h3>
+        <p>Напиток собирается по техкарте за 2–3 минуты. Бариста без опыта обучаем за 5 дней.</p>
+      </article>
+      <article class="why-item glass">
+        <span class="why-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span>
+        <h3>Яркий бренд</h3>
+        <p>Синий стакан с лаймовой лентой и 30 вкусов в меню — гости фотографируют напитки и сами приводят друзей.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container f-section" id="formats">
+    <div class="f-head">
+      <h2>Три формата</h2>
+      <p>Выберите формат под локацию и бюджет. Цифры посчитаны по базовым параметрам из калькулятора ниже.</p>
+    </div>
+    <div class="formats" id="formatCards"></div>
+  </section>
+
+  <section class="container f-section" id="calc">
+    <div class="f-head">
+      <h2>Калькулятор дохода</h2>
+      <p>Подвигайте ползунки под свою локацию. Расчёт ориентировочный: точную финансовую модель под ваш город пришлём после заявки.</p>
+    </div>
+    <div class="calc">
+      <form class="calc-inputs glass" id="calcForm">
+        <div class="field">
+          <span class="field-label">Формат</span>
+          <div class="seg" id="calcFormat"></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="calcCups">Стаканов в день</label><output id="calcCupsOut" for="calcCups"></output></div>
+          <input type="range" id="calcCups" min="50" max="600" step="10">
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="calcCheck">Средний чек</label><output id="calcCheckOut" for="calcCheck"></output></div>
+          <input type="range" id="calcCheck" min="250" max="700" step="10">
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="calcRent">Аренда в месяц</label><output id="calcRentOut" for="calcRent"></output></div>
+          <input type="range" id="calcRent" min="30000" max="900000" step="10000">
+        </div>
+        <p class="calc-note" id="calcNote"></p>
+      </form>
+      <div class="calc-result glass glass-blue" aria-live="polite">
+        <div class="calc-kpis">
+          <div class="calc-kpi"><span>Выручка в месяц</span><strong id="kRevenue"></strong></div>
+          <div class="calc-kpi is-key"><span>Прибыль в месяц</span><strong id="kProfit"></strong></div>
+          <div class="calc-kpi is-key"><span>Окупаемость</span><strong id="kPayback"></strong></div>
+        </div>
+        <div class="breakdown">
+          <p class="breakdown-title">Куда уходит выручка</p>
+          <div id="breakdown"></div>
+        </div>
+        <p class="calc-disclaimer" id="calcDisclaimer"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container f-section" id="support">
+    <div class="f-head">
+      <h2>Что вы получаете</h2>
+      <p>Мы передаём не только название, а всю систему, на которой работает наш бар.</p>
+    </div>
+    <div class="support">
+      <article class="support-item glass"><h3>Бренд и дизайн-проект</h3><p>Брендбук, планировка под ваше помещение, вывеска, стаканы и упаковка с логотипом.</p></article>
+      <article class="support-item glass"><h3>Меню и техкарты</h3><p>30 напитков в пяти линейках, граммовки, фото-стандарты подачи и сезонные новинки.</p></article>
+      <article class="support-item glass"><h3>Обучение команды</h3><p>5 дней в действующем баре LILU: приготовление, сервис, касса, чистота.</p></article>
+      <article class="support-item glass"><h3>Поставки</h3><p>Тапиока, поппинг-боба, пюре, сиропы и чай от проверенных поставщиков по ценам сети.</p></article>
+      <article class="support-item glass"><h3>Маркетинг запуска</h3><p>План открытия, контент для соцсетей, промо-материалы и общая программа лояльности.</p></article>
+      <article class="support-item glass"><h3>Касса и аналитика</h3><p>Настроенная касса, отчёты по продажам и еженедельные созвоны с управляющим сети.</p></article>
+    </div>
+  </section>
+
+  <section class="container f-section" id="steps">
+    <div class="f-head">
+      <h2>Как открыть</h2>
+      <p>От заявки до первого гостя проходит около трёх месяцев.</p>
+    </div>
+    <ol class="steps">
+      <li class="step glass"><h3>Заявка</h3><p>Оставляете заявку, менеджер звонит и присылает презентацию с финансовой моделью.</p><span class="step-time">1 день</span></li>
+      <li class="step glass"><h3>Встреча и анализ города</h3><p>Созваниваемся или встречаемся, смотрим город, трафик и конкурентов.</p><span class="step-time">1–2 недели</span></li>
+      <li class="step glass"><h3>Договор</h3><p>Подписываем договор коммерческой концессии и закрепляем территорию.</p><span class="step-time">1 неделя</span></li>
+      <li class="step glass"><h3>Помещение и проект</h3><p>Помогаем выбрать локацию и готовим дизайн-проект под ваши метры.</p><span class="step-time">2–4 недели</span></li>
+      <li class="step glass"><h3>Ремонт и обучение</h3><p>Ремонт, поставка оборудования, обучение команды в баре LILU.</p><span class="step-time">4–6 недель</span></li>
+      <li class="step glass"><h3>Открытие</h3><p>Открываемся вместе: наш управляющий на месте, промо в соцсетях.</p><span class="step-time">День открытия</span></li>
+    </ol>
+  </section>
+
+  <section class="container f-section" id="faq">
+    <div class="f-head">
+      <h2>Вопросы</h2>
+    </div>
+    <div class="faq">
+      <details class="glass"><summary>Нужен ли опыт в общепите?</summary><p>Нет. Мы обучаем вас и команду, даём стандарты и ведём первые месяцы работы. Достаточно желания заниматься бизнесом и быть на связи.</p></details>
+      <details class="glass"><summary>Сколько времени занимает запуск?</summary><p>В среднем три месяца от подписания договора. Больше всего времени обычно уходит на поиск помещения и ремонт.</p></details>
+      <details class="glass"><summary>Что входит в паушальный взнос?</summary><p>Право работать под брендом LILU, дизайн-проект, обучение команды, техкарты, доступ к поставщикам и маркетинговый план открытия.</p></details>
+      <details class="glass"><summary>Можно открыть несколько точек?</summary><p>Да. Для нескольких точек и целых регионов у нас отдельные условия, обсудим их после заявки.</p></details>
+      <details class="glass"><summary>Где закупать ингредиенты?</summary><p>У поставщиков сети по нашим ценам. Так вкус напитков одинаковый во всех барах LILU.</p></details>
+    </div>
+  </section>
+
+  <section class="container f-section" id="apply">
+    <div class="apply glass glass-blue">
+      <div class="apply-copy">
+        <p class="eyebrow">Заявка</p>
+        <h2>Обсудим ваш <span class="en">LILU</span></h2>
+        <p>Оставьте контакты. Менеджер франшизы позвонит в течение рабочего дня и пришлёт финансовую модель под ваш город.</p>
+      </div>
+      <form class="apply-form" id="applyForm" novalidate>
+        <div class="field"><label for="aName">Имя</label><input id="aName" name="name" autocomplete="name" required placeholder="Как к вам обращаться"></div>
+        <div class="field"><label for="aPhone">Телефон</label><input id="aPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 900 000-00-00"></div>
+        <div class="field"><label for="aCity">Город</label><input id="aCity" name="city" autocomplete="address-level2" required placeholder="Где хотите открыться"></div>
+        <div class="field"><label for="aFormat">Формат</label>
+          <select id="aFormat" name="format">
+            <option>Пока не знаю</option>
+          </select>
+        </div>
+        <div class="field field-wide"><label for="aBudget">Бюджет на запуск</label>
+          <select id="aBudget" name="budget">
+            <option>До 2 млн ₽</option>
+            <option>2–4 млн ₽</option>
+            <option>4–6 млн ₽</option>
+            <option>Больше 6 млн ₽</option>
+          </select>
+        </div>
+        <div class="field field-wide"><label for="aMsg">Комментарий</label><textarea id="aMsg" name="message" placeholder="Есть ли помещение, опыт в бизнесе, вопросы"></textarea></div>
+        <div class="apply-actions">
+          <button class="btn btn-lime" type="submit">Отправить заявку</button>
+          <p class="apply-status" id="applyStatus" role="status"></p>
+        </div>
+        <p class="apply-consent field-wide">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="container footer-wrap">
+  <div class="site-footer glass">
+    <p class="footer-mark" aria-hidden="true">LILU Drinks</p>
+    <div class="footer-row">
+      <p>© 2026 LILU Drinks. Франшиза безалкогольного бара.</p>
+      <a href="index.html">Бар и меню</a>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="glass.js"></script>
+<script src="franchise.js"></script>
+</body>
+</html>

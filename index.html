@@ -11,24 +11,34 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-row">
-    <a class="logo" href="#top" aria-label="LILU Drinks — на главную">
+<div class="wallpaper" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<header class="topbar">
+  <div class="topbar-pill glass">
+    <a class="logo" href="index.html" aria-label="LILU Drinks — на главную">
       <span class="logo-mark">LILU</span><span class="logo-sub">drinks</span>
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#menu">Меню</a>
       <a href="#builder">Собрать бабл ти</a>
       <a href="#about">О баре</a>
+      <a href="franchise.html">Франшиза</a>
       <a href="#visit">Контакты</a>
     </nav>
     <a class="btn btn-lime btn-sm" href="#menu">Меню</a>
   </div>
 </header>
 
+<nav class="tabbar glass" aria-label="Быстрая навигация">
+  <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1.4 13H7.4z"/><path d="M5 7h14M14 7l2-5"/></svg>Меню</a>
+  <a href="#builder"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="16" r="2.5"/><circle cx="15" cy="17" r="2.5"/><circle cx="12" cy="10" r="2.5"/><path d="M17 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>Собрать</a>
+  <a href="franchise.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10l8-6 8 6v10H4z"/><path d="M10 20v-5h4v5"/></svg>Франшиза</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Контакты</a>
+</nav>
+
 <main id="top">
-  <section class="hero">
-    <div class="container hero-grid">
+  <section class="container hero-wrap">
+    <div class="hero glass glass-blue">
       <div class="hero-copy">
         <p class="eyebrow">Безалкогольный бар</p>
         <h1 class="wordmark" aria-label="LILU Drinks">
@@ -38,15 +48,17 @@
         <p class="lead">Бабл ти, крафтовые лимонады, безалкогольные коктейли и чай. Холодные, яркие и без градусов.</p>
         <div class="hero-actions">
           <a class="btn btn-lime" href="#menu">Смотреть меню</a>
-          <a class="btn btn-outline" href="#builder">Собрать свой бабл ти</a>
+          <a class="btn btn-glass" href="#builder">Собрать свой бабл ти</a>
         </div>
       </div>
       <div class="hero-cups" id="heroCups" aria-hidden="true"></div>
     </div>
   </section>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track" id="marquee"></div>
+  <div class="container">
+    <div class="marquee glass glass-lime" aria-hidden="true">
+      <div class="marquee-track" id="marquee"></div>
+    </div>
   </div>
 
   <section class="menu" id="menu">
@@ -55,13 +67,15 @@
         <h2>Меню</h2>
         <p>Пять линеек напитков: от домашних лимонадов до десертных бабл ти с мороженым. Все напитки без алкоголя.</p>
       </div>
-      <nav class="chips" id="chips" aria-label="Линейки напитков"></nav>
+      <div class="chips-wrap">
+        <nav class="chips-glass glass" aria-label="Линейки напитков"><div class="chips" id="chips"></div></nav>
+      </div>
       <div id="menuGroups"></div>
     </div>
   </section>
 
-  <section class="builder" id="builder">
-    <div class="container builder-grid">
+  <section class="container section-pad" id="builder">
+    <div class="builder glass glass-lime">
       <div class="builder-visual">
         <div class="builder-cup" id="builderCup"></div>
       </div>
@@ -70,14 +84,14 @@
         <h2>Собери свой <span class="en">Bubble Tea</span></h2>
         <p class="builder-intro">Выберите основу, топпинг, сладость и лёд. Покажите готовый заказ бариста или скопируйте его в сообщение.</p>
         <form id="builderForm" class="builder-form"></form>
-        <div class="builder-summary">
+        <div class="builder-summary glass glass-dark">
           <div>
             <p class="summary-label">Ваш напиток</p>
             <p class="summary-text" id="summaryText"></p>
           </div>
           <div class="summary-side">
             <p class="summary-price" id="summaryPrice"></p>
-            <button class="btn btn-blue" type="button" id="copyOrder">Скопировать заказ</button>
+            <button class="btn btn-lime" type="button" id="copyOrder">Скопировать заказ</button>
           </div>
         </div>
         <p class="copy-status" id="copyStatus" role="status"></p>
@@ -85,24 +99,35 @@
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-copy">
+  <section class="container section-pad" id="about">
+    <div class="about-grid">
+      <div class="about-copy glass">
         <h2>Бар, где не наливают</h2>
         <p>LILU — место, куда приходят с друзьями, после учёбы или на свидание. Вместо алкогольной карты у нас лимонады на домашних сиропах, безалкогольная классика вроде мохито и пина колады, бабл ти на свежезаваренном чае и десертные напитки с мороженым.</p>
         <p>Каждую линейку мы собрали вокруг одной идеи: напиток должен быть вкусным без сахарной перегрузки и красивым в стакане.</p>
       </div>
       <dl class="facts">
-        <div class="fact"><dt>0,0 %</dt><dd>алкоголя во всех напитках</dd></div>
-        <div class="fact"><dt>30</dt><dd>вкусов в пяти линейках</dd></div>
-        <div class="fact"><dt>0–100 %</dt><dd>сладость настраивается с шагом 25 %</dd></div>
-        <div class="fact"><dt>700 мл</dt><dd>самый большой стакан, размер L</dd></div>
+        <div class="fact glass"><dt>0,0 %</dt><dd>алкоголя во всех напитках</dd></div>
+        <div class="fact glass"><dt>30</dt><dd>вкусов в пяти линейках</dd></div>
+        <div class="fact glass"><dt>0–100 %</dt><dd>сладость настраивается с шагом 25 %</dd></div>
+        <div class="fact glass"><dt>700 мл</dt><dd>самый большой стакан, размер L</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="visit" id="visit">
-    <div class="container">
+  <section class="container section-pad" id="franchise-teaser">
+    <a class="teaser glass" href="franchise.html">
+      <div>
+        <p class="eyebrow eyebrow-blue">Франшиза</p>
+        <h2>Откройте <span class="en">LILU</span> в своём городе</h2>
+        <p>Три формата: от киоска на 6 м² до бара с посадкой. Считайте окупаемость в калькуляторе и оставляйте заявку.</p>
+      </div>
+      <span class="btn btn-blue">Подробнее о франшизе →</span>
+    </a>
+  </section>
+
+  <section class="container section-pad" id="visit">
+    <div class="visit glass glass-blue">
       <h2>Приходите в <span class="en">LILU</span></h2>
       <div class="visit-grid">
         <div class="visit-item"><p class="visit-label">Адрес</p><p class="visit-value">ул. Лимонадная, 7</p></div>
@@ -114,16 +139,18 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
+<footer class="container footer-wrap">
+  <div class="site-footer glass">
     <p class="footer-mark" aria-hidden="true">LILU Drinks</p>
     <div class="footer-row">
       <p>© 2026 LILU Drinks. Безалкогольный бар.</p>
+      <a href="franchise.html">Франшиза</a>
       <a href="#top">Наверх ↑</a>
     </div>
   </div>
 </footer>
 
+<script src="glass.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

@@ -229,8 +229,8 @@ function renderMarquee() {
 
 /* ---------- Menu ---------- */
 function renderMenu() {
-  $('#chips').innerHTML = CATEGORIES.map((cat, i) =>
-    `<a class="chip${i === 0 ? ' is-active' : ''}" href="#cat-${cat.id}" data-cat="${cat.id}">${esc(cat.name)} <small>${cat.items.length}</small></a>`
+  $('#chips').innerHTML = CATEGORIES.map(cat =>
+    `<a class="chip" href="#cat-${cat.id}" data-cat="${cat.id}">${esc(cat.name)} <small>${cat.items.length}</small></a>`
   ).join('');
 
   $('#menuGroups').innerHTML = CATEGORIES.map(cat => `
@@ -264,19 +264,30 @@ function renderMenu() {
       </div>
     </section>`).join('');
 
-  // highlight the chip of the category in view
-  const chips = [...document.querySelectorAll('.chip')];
+  // sliding glass indicator under the chip of the category in view
+  const bar = $('#chips');
+  const chips = [...bar.querySelectorAll('.chip')];
+  const indicator = document.createElement('span');
+  indicator.className = 'chip-indicator';
+  bar.prepend(indicator);
+  const setActive = id => {
+    chips.forEach(c => {
+      const on = c.dataset.cat === id;
+      c.classList.toggle('is-active', on);
+      if (!on) return;
+      indicator.style.width = `${c.offsetWidth}px`;
+      indicator.style.transform = `translateX(${c.offsetLeft}px)`;
+      const left = c.offsetLeft - (bar.clientWidth - c.offsetWidth) / 2;
+      bar.scrollTo({ left, behavior: 'smooth' });
+    });
+  };
+  setActive(CATEGORIES[0].id);
+  window.addEventListener('resize', () => setActive(bar.querySelector('.chip.is-active').dataset.cat));
+  if (document.fonts) document.fonts.ready.then(() => setActive(bar.querySelector('.chip.is-active').dataset.cat));
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const id = e.target.id.replace('cat-', '');
-        chips.forEach(c => {
-          const on = c.dataset.cat === id;
-          c.classList.toggle('is-active', on);
-          if (on) c.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-        });
-      });
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id.replace('cat-', '')); });
     }, { rootMargin: '-40% 0px -55% 0px' });
     document.querySelectorAll('.group').forEach(g => io.observe(g));
   }
